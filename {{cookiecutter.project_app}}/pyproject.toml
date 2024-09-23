@@ -1,0 +1,45 @@
+[project]
+name = "{{ cookiecutter.project_app }}"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django",
+    "psycopg[binary]",
+    "dj-database-url",
+    "whitenoise",
+    "django-extensions",
+    "django-model-utils",
+    "django-storages",
+    "boto3",
+    {%- if cookiecutter.project_type == 'wagtail' %}
+    "wagtail",
+    {% endif %}
+]
+
+[tool.uv]
+dev-dependencies = [
+    "django-debug-toolbar",
+    "ipython",
+    "invoke",
+    "pre-commit",
+    "black",
+    "coverage",
+    "factory_boy",
+    {%- if cookiecutter.include_accessibility_tests == 'yes' %}
+    "axe-selenium-python",
+    {% endif %}
+    {%- if cookiecutter.testing_type == 'pytest' %}
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+    "pytest-subtests",
+    {% endif %}
+    {%- if cookiecutter.project_type == 'django' -%}
+    "beautifulsoup4",
+    {% endif %}
+    {%- if cookiecutter.project_type == 'wagtail' %}
+    "wagtail-factories",
+    {% endif %}
+]
