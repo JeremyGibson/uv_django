@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bbf1a45-5dbe-45ec-bb13-093226bc3aba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/post_gen_project.py" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/post_gen_project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +60,7 @@
       <workItem from="1727095322960" duration="27184000" />
       <workItem from="1727190083449" duration="13961000" />
       <workItem from="1730969617278" duration="1386000" />
-      <workItem from="1731334820630" duration="30345000" />
+      <workItem from="1731334820630" duration="31413000" />
     </task>
     <servers />
   </component>

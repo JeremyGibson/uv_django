@@ -72,7 +72,7 @@ ENV GRANIAN_WORKERS=2 GRANIAN_THREADS=4
 USER ${APP_USER}:${APP_USER}
 
 # Uncomment after creating your docker-entrypoint.sh
-#ENTRYPOINT ["/code/docker-entrypoint.sh"]
+ENTRYPOINT ["/code/docker-entrypoint.sh"]
 
 # Start uWSGI
 CMD ["granian", "--interface", "wsgi", "{{cookiecutter.project_app}}/wsgi.py"]
