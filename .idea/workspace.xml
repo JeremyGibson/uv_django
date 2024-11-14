@@ -5,110 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bbf1a45-5dbe-45ec-bb13-093226bc3aba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cookiecutter.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/post_gen_project.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/pre_gen_project.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.circleci/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.coveragerc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.envrc_template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.flake8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.github/pull_request_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.github/workflows/deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.github/workflows/pre-commit.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.github/workflows/tests.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.isort.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.nvmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.pre-commit-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.sentryclirc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/templates/search/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/templates/search/search_pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/templates/search/search_result.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/tests/search_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/search/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/managers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/abstracts/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/abstracts/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/abstracts/mixins/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/app_entry.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/components/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/core/_index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/core/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/sass/core/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/assets/styles/tailwind/app_main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/templates/includes/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/templates/includes/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/tests/test_accessibility.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/apps/{{cookiecutter.primary_app}}/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/ansible.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/boto-temporary-creds.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/deploy-cf-stack.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/deploy-cluster.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/deploy-s3.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/echo-vault-pass.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/group_vars/all.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/group_vars/k8s.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/host_vars/production.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/host_vars/staging.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/inventory" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/k8s_auth_ssl_ca_cert.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/requirements.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/stack/eks-no-nat.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/stack/website-bucket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/deploy/stack/website-bucket.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/docker-compose-deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/docker-entrypoint.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/docs/backups.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/docs/commands.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/docs/deploy.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/assets/js/sentryInit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/assets/js/webpack_entry.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/assets/styles/sass_entry.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/assets/styles/tailwind_entry.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/settings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/settings/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/settings/deploy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/settings/dev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/settings/local.example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/settings/production.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/static/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/storages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/post_gen_project.py" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/post_gen_project.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/{{cookiecutter.project_app}}/{{cookiecutter.project_app}}/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2mTKr6Z8TYNMUXZRVPYWVgh5t52" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -132,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/data/projects/uv_django",
+    "last_opened_file_path": "/data/projects/jade-truffle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -147,8 +51,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -160,7 +64,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727095321939</updated>
-      <workItem from="1727095322960" duration="12577000" />
+      <workItem from="1727095322960" duration="27184000" />
+      <workItem from="1727190083449" duration="13961000" />
+      <workItem from="1730969617278" duration="1386000" />
+      <workItem from="1731334820630" duration="30345000" />
     </task>
     <servers />
   </component>

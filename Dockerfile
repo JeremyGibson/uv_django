@@ -25,7 +25,7 @@ RUN set -ex \
     && apt-get update && apt-get install -y --no-install-recommends $RUN_DEPS \
     && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/apt.postgresql.org.gpg >/dev/null \
     && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main" > /etc/apt/sources.list.d/postgresql.list' \
-    && apt-get update && apt-get install -y --no-install-recommends postgresql-client-{{ cookiecutter.postgres_version }} \
+    && apt-get update && apt-get install -y --no-install-recommends postgresql-client-16 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
@@ -35,11 +35,12 @@ ADD . /code/
 # Add uv to install requirements
 
 COPY --from=ghcr.io/astral-sh/uv:0.5.1 /uv /bin/uv
-ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
 
+ENV UV_PROJECT_ENVIRONMENT="/usr/local"
 RUN uv sync --frozen --no-dev --group prod
 
-COPY --from=static_files /code/{{ cookiecutter.project_app }}/static /code/{{ cookiecutter.project_app }}/static
+
+COPY --from=static_files /code/apple_pie/static /code/apple_pie/static
 
 FROM base AS deploy
 
@@ -51,13 +52,14 @@ RUN groupadd -r ${APP_USER} && useradd --no-log-init -r -g ${APP_USER} ${APP_USE
 EXPOSE 8000
 
 # Add any static environment variables needed by Django or your settings file here:
-ENV DJANGO_SETTINGS_MODULE={{ cookiecutter.project_app }}.settings.deploy
+ENV DJANGO_SETTINGS_MODULE=apple_pie.settings.deploy
+ENV DJANGO_SECRET_KEY=alksdj&asdfjHyasdk
 
 # Call collectstatic (customize the following line with the minimal environment variables needed for manage.py to run):
 RUN DATABASE_URL='' ENVIRONMENT='' DJANGO_SECRET_KEY='dummy' DOMAIN='' python manage.py collectstatic --noinput -i *.scss --no-default-ignore
 
 ## Tell uWSGI where to find your wsgi file (change this):
-#ENV UWSGI_WSGI_FILE={{ cookiecutter.project_app }}/wsgi.py
+#ENV UWSGI_WSGI_FILE=apple_pie/wsgi.py
 
 ## Base uWSGI configuration (you shouldn't need to change these):
 #ENV UWSGI_HTTP=:8000 UWSGI_MASTER=1 UWSGI_HTTP_AUTO_CHUNKED=1 UWSGI_HTTP_KEEPALIVE=1 UWSGI_LAZY_APPS=1 UWSGI_WSGI_ENV_BEHAVIOR=holy UWSGI_IGNORE_SIGPIPE=true UWSGI_IGNORE_WRITE_ERRORS=true UWSGI_DISABLE_WRITE_EXCEPTION=true
@@ -75,4 +77,4 @@ USER ${APP_USER}:${APP_USER}
 #ENTRYPOINT ["/code/docker-entrypoint.sh"]
 
 # Start uWSGI
-CMD ["granian", "--interface", "wsgi", "{{cookiecutter.project_app}}/wsgi.py"]
+CMD ["granian", "--interface", "wsgi", "apple_pie/wsgi.py"]

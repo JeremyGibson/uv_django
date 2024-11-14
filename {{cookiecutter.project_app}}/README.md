@@ -4,12 +4,11 @@
 ## ✏️ **Develop**
 To begin you should have the following applications installed on your local development system:
 
-- Python >= 3.10
-- NodeJS == 12.x
-- npm == 6.14.x (comes with node 12)
-- [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) is not strictly _required_, but will almost certainly be necessary unless you just happen to have Node.js 12.x installed on your machine.
-- [pip](http://www.pip-installer.org/) >= 20
-- Postgres >= 12
+- Python >= {{ cookiecutter.python_version }}
+- NodeJS == {{ cookiecutter.node_version }}
+- bun
+- uv
+- Postgres >= {{ cookiecutter.postgres_version }}
 - git >= 2.26
 
 {% if cookiecutter.css_style == "sass" %}

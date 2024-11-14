@@ -15,11 +15,11 @@ dependencies = [
     "boto3",
     {%- if cookiecutter.project_type == 'wagtail' %}
     "wagtail",
-    {% endif %}
+    {%- endif %}
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev =  [
     "django-debug-toolbar",
     "ipython",
     "invoke",
@@ -29,17 +29,21 @@ dev-dependencies = [
     "factory_boy",
     {%- if cookiecutter.include_accessibility_tests == 'yes' %}
     "axe-selenium-python",
-    {% endif %}
+    {%- endif %}
     {%- if cookiecutter.testing_type == 'pytest' %}
     "pytest",
     "pytest-cov",
     "pytest-django",
     "pytest-subtests",
-    {% endif %}
+    {%- endif %}
     {%- if cookiecutter.project_type == 'django' -%}
     "beautifulsoup4",
-    {% endif %}
+    {%- endif %}
     {%- if cookiecutter.project_type == 'wagtail' %}
     "wagtail-factories",
-    {% endif %}
+    {%- endif %}
+]
+
+prod = [
+    "granian",
 ]

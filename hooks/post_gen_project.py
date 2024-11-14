@@ -33,7 +33,7 @@ def clean_project():
 
 
 def setup_node():
-    print("Setting up Node")
+    print("Setting up Bun")
     base_deps = [
         "@babel/core",
         "@babel/preset-env",
@@ -73,11 +73,12 @@ def setup_node():
     else:
         base_deps += sass_deps
 
-    subprocess.run(['/bin/bash', '-i', '-c', 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh" && nvm use'])
-    subprocess.run(['/bin/bash', '-i', '-c', 'nvm', 'install-latest-npm'])
+    # subprocess.run(['/bin/bash', '-i', '-c', 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh" && nvm use'])
+    # subprocess.run(['/bin/bash', '-i', '-c', 'nvm', 'install-latest-npm'])
+    subprocess.run(['/bin/bash', '-i', '-c', f'curl -fsSL https://bun.sh/install | bash'])
 
     for dep in base_deps:
-        subprocess.run(['npm', 'install', '--silent', dep])
+        subprocess.run(['bun', 'add', dep])
 
 
 def setup_python():
