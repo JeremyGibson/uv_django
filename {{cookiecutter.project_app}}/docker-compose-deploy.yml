@@ -4,10 +4,12 @@ services:
   app:
     environment:
       DJANGO_SETTINGS_MODULE: {{ cookiecutter.project_app }}.settings.deploy
-      DATABASE_URL: postgres://postgres@db:5432/{{ cookiecutter.project_app }}
+      DATABASE_URL: postgres://postgres@db:{{ cookiecutter.postgres_port }}/{{ cookiecutter.project_app }}
       CACHE_HOST: cache:11211
       ENVIRONMENT: local
       DJANGO_SECRET_KEY: insecure-dev-key
+      GRANIAN_LOG_ENABLED: enabled
+      GRANIAN_LOG_LEVEL: debug
       DOMAIN: localhost
       EMAIL_HOST: mailhog
       EMAIL_PORT: 1025
@@ -16,7 +18,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
       target: deploy
-    command: ["uwsgi", "--show-config"]
+    command: ["granian", "--show-config"]
     links:
       - db:db
     ports:

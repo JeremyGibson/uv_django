@@ -21,7 +21,7 @@ INSTALLED_APPS.extend(
 )
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 INTERNAL_IPS = ("127.0.0.1",)
 
 if os.getenv("DEBUG_TOOLBAR", "True") == "True":

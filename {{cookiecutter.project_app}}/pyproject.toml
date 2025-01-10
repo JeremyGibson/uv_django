@@ -1,6 +1,6 @@
 [project]
 name = "{{ cookiecutter.project_app }}"
-version = "0.1.0"
+version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -11,8 +11,6 @@ dependencies = [
     "whitenoise",
     "django-extensions",
     "django-model-utils",
-    "django-storages",
-    "boto3",
     {%- if cookiecutter.project_type == 'wagtail' %}
     "wagtail",
     {%- endif %}
@@ -26,7 +24,7 @@ dev =  [
     "pre-commit",
     "black",
     "coverage",
-    "factory_boy",
+    "model-bakery",
     {%- if cookiecutter.include_accessibility_tests == 'yes' %}
     "axe-selenium-python",
     {%- endif %}
@@ -45,5 +43,5 @@ dev =  [
 ]
 
 prod = [
-    "granian",
+    "uwsgi",
 ]
