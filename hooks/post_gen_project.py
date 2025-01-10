@@ -35,21 +35,9 @@ def clean_project():
 def setup_node():
     print("Setting up Bun")
     base_deps = [
-        "@babel/core",
-        "@babel/preset-env",
-        "@sentry/webpack-plugin",
-        "babel-loader",
-        "fs-jetpack",
-        "jquery",
-        "autoprefixer",
-        "gulp",
-        "gulp-rename",
-        "prettier",
-        "webpack",
-        "webpack-bundle-tracker",
-        "webpack-merge",
-        "webpack-cli",
-        "webpack-stream"
+        "alpinejs",
+        "tailwindcss"
+        "@tailwindcss/cli"
     ]
 
     tailwind_deps = [
