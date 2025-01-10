@@ -16,4 +16,4 @@ os.environ.setdefault(
     "DJANGO_SETTINGS_MODULE", "{{cookiecutter.project_app}}.settings.dev"
 )
 
-app = get_wsgi_application()
+application = get_wsgi_application()
