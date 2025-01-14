@@ -1,2 +1,0 @@
-Replace this file with the content recommended in the console when you attempt to
-deploy to the cluster for the first time.

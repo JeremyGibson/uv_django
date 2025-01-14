@@ -1,13 +1,13 @@
 FROM oven/bun:latest as static_files
 WORKDIR /code
 ENV PATH /code/node_modules/.bin:$PATH
-COPY package.json bun.lockb webpack.config.js /code/
+COPY package.json bun.lockb /code/
 RUN bun install
 COPY . /code/
 RUN bun run build
 RUN bun run build:css
 
-FROM python:3.12.7-slim-bookworm as base
+FROM python:3.12.6-slim-bookworm as base
 
 # Install packages needed to run your application (not build deps):
 #   mime-support -- for mime types when serving static files

@@ -8,20 +8,6 @@ def clean_project():
         print("REMOVE: pytest.ini")
         Path(Path().cwd(), "pytest.ini").unlink()
 
-    if "{{cookiecutter.css_style}}" == "sass":
-        Path("./tailwind.config.js").unlink()
-        Path("./postcss.config.js").unlink()
-        Path("./{{cookiecutter.project_app}}/assets/styles/tailwind_entry.css").unlink()
-        shutil.rmtree(Path("./apps/{{cookiecutter.primary_app}}/assets/styles/tailwind"))
-    elif "{{cookiecutter.css_style}}" == "tailwind":
-        Path("./{{cookiecutter.project_app}}/assets/styles/sass_entry.scss").unlink()
-        shutil.rmtree(Path("./apps/{{cookiecutter.primary_app}}/assets/styles/sass"))
-
-    if "{{cookiecutter.ci_cd}}" == "actions":
-        shutil.rmtree(Path("./.circleci"))
-    else:
-        shutil.rmtree(Path("./.github"))
-
     if "{{cookiecutter.project_type}}" == "django":
         shutil.rmtree((Path("./apps/search")))
 
@@ -39,27 +25,6 @@ def setup_node():
         "tailwindcss"
         "@tailwindcss/cli"
     ]
-
-    tailwind_deps = [
-        "tailwindcss",
-        "@tailwindcss/typography",
-        "postcss",
-        "cssnano",
-        "gulp-postcss",
-        "postcss-cli",
-        "postcss-import",
-        "postcss-preset-env",
-    ]
-
-    sass_deps = [
-        "sass",
-        "gulp-sass"
-    ]
-
-    if "{{cookiecutter.css_style}}" == "tailwind":
-        base_deps += tailwind_deps
-    else:
-        base_deps += sass_deps
 
     subprocess.run(['/bin/bash', '-i', '-c', f'curl -fsSL https://bun.sh/install | bash'])
 
