@@ -24,7 +24,11 @@ def setup_node():
     print("Setting up Bun")
     base_deps = [
         "alpinejs",
-        "tailwindcss"
+        "tailwindcss",
+    ]
+
+    dev_deps = [
+        "esbuild"
     ]
 
     subprocess.run(['/bin/bash', '-i', '-c', f'curl -fsSL https://bun.sh/install | bash'])
@@ -32,22 +36,18 @@ def setup_node():
     for dep in base_deps:
         subprocess.run(['bun', 'add', dep])
 
+    for dep in dev_deps:
+        subprocess.run(['bun', 'add', '--development', dep])
+
 
 def setup_python():
     print("Setting up Python")
     subprocess.run(['make', 'update_requirements'])
 
 
-def setup_local_py():
-    print("Setting up local.py")
-    Path("./{{cookiecutter.project_app}}/settings/local.example.py")\
-        .rename("./{{cookiecutter.project_app}}/settings/local.py")
-
-
 def main():
     print("Running post generation tasks.")
     clean_project()
-    setup_local_py()
     setup_node()
     setup_python()
 

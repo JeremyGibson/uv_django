@@ -1,0 +1,28 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "../../../apps/{{cookiecutter.primary_app}}/assets/styles/app.css";
+
+@layer components {
+  /* Global Setup
+    Gives a flex column global flow and allows for a sticky footer
+  */
+
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full flex flex-col bg-white;
+  }
+
+  .content {
+    @apply flex-grow flex-shrink-0;
+  }
+
+  footer {
+    @apply flex-shrink-0;
+  }
+}
+

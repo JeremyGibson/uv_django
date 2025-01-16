@@ -6,8 +6,9 @@
   "main": "index.js",
   "prettier": "eslint-config-vinta/prettier",
   "scripts": {
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --config webpack.config.js --bail",
-    "build:css": "postcss ./{{cookiecutter.project_app}}/assets/styles/tailwind_entry.css -o {{cookiecutter.project_app}}/static/css/main.css --env 'production' --verbose"
+    "css-watch": "bunx tailwindcss -i ./{{ cookiecutter.project_app }}/assets/styles/app.css -o ./{{ cookiecutter.project_app }}/static/css/main.css --watch",
+    "build": "DEPLOY=DEPLOY bun run ./build.config.js",
+    "build:css": "bunx tailwindcss -i ./{{ cookiecutter.project_app }}/assets/styles/app.css -o ./{{ cookiecutter.project_app }}/static/css/main.css --minify"
   },
   "babel": {
     "presets": [

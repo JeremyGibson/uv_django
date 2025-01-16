@@ -4,7 +4,7 @@
   "primary_app": "{{ cookiecutter.project_app }}",
   "primary_app_config": "{{ cookiecutter.project_app|replace('_','')|capitalize()|trim() }}",
   "python_version": "3.12.6",
-  "node_version": "lts/*",
+  "uv_version": "",
   "project_type": ["wagtail", "django"],
   "testing_type": ["pytest", "django"],
   "postgres_version": ["14", "15", "16"],

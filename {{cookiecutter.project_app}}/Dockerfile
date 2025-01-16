@@ -35,7 +35,7 @@ WORKDIR /code/
 ADD . /code/
 # Add uv to install requirements
 
-COPY --from=ghcr.io/astral-sh/uv:0.5.1 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:{{ cookiecutter.uv_version }} /uv /bin/uv
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
 
 RUN uv sync --frozen --no-dev --group prod

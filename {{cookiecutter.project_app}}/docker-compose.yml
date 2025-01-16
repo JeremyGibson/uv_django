@@ -1,4 +1,3 @@
-
 volumes:
   dev_{{ cookiecutter.project_app }}_data: {}
 

@@ -5,6 +5,7 @@ services:
   app:
     environment:
       DJANGO_SETTINGS_MODULE: {{ cookiecutter.project_app }}.settings.deploy
+      DATABASE_URL: postgres://postgres@db:5432/{{ cookiecutter.project_app }}
       ENVIRONMENT: local
       DJANGO_SECRET_KEY: insecure-dev-key
       DOMAIN: localhost
@@ -15,6 +16,6 @@ services:
       target: deploy
     command: ["uwsgi", "--show-config"]
     depends_on:
-      - db:db
+      - db
     ports:
       - "8000:8000"
