@@ -46,12 +46,13 @@ prod = [
     "uwsgi",
 ]
 
-[tool.ruff]
-line_length = 100
-target_version = "py312"
+[tool.black]
+line-length = 100
+target-version = ["py311"]
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
 # This is the default for ruff, but I like to leave it in since it makes it obvious where and how to change things.
 select = ["E4", "E7", "E9", "F"]
-ignore = []
+# Ignore import from star import errors. We use this extensively in the settings files
+ignore = ["F405", "F403"]

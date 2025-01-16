@@ -55,7 +55,7 @@ EXPOSE 8000
 ENV DJANGO_SETTINGS_MODULE={{ cookiecutter.project_app }}.settings.deploy
 
 # Call collectstatic (customize the following line with the minimal environment variables needed for manage.py to run):
-RUN DATABASE_URL='' ENVIRONMENT='' DJANGO_SECRET_KEY='dummy' DOMAIN='' python manage.py collectstatic --noinput -i *.scss --no-default-ignore
+RUN DATABASE_URL='' ENVIRONMENT='' DJANGO_SECRET_KEY='dummy' DOMAIN='' python manage.py collectstatic --no-default-ignore
 
 ## Tell uWSGI where to find your wsgi file (change this):
 ENV UWSGI_WSGI_FILE={{ cookiecutter.project_app }}/wsgi.py

@@ -257,13 +257,6 @@ LOGGING = {
     },
 }
 
-{% if cookiecutter.css_style == "sass" -%}
-# django-sass-processor
-# https://pypi.org/project/django-sass-processor/
-SASS_PROCESSOR_ROOT = STATIC_ROOT
-SASS_PRECISION = 8
-{% endif %}
-
 {% if cookiecutter.project_type == 'wagtail'-%}
 # Wagtail settings
 

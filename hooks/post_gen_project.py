@@ -1,6 +1,8 @@
 import subprocess
 import shutil
 from pathlib import Path
+import requests
+import yaml
 
 
 def clean_project():
@@ -23,7 +25,6 @@ def setup_node():
     base_deps = [
         "alpinejs",
         "tailwindcss"
-        "@tailwindcss/cli"
     ]
 
     subprocess.run(['/bin/bash', '-i', '-c', f'curl -fsSL https://bun.sh/install | bash'])

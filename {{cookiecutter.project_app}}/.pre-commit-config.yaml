@@ -1,24 +1,24 @@
 repos:
   - repo: "https://github.com/astral-sh/ruff-pre-commit"
-    rev: v{{ cookiecutter.ruff }}
+    rev: latest
     hooks:
       - id: ruff
         # Ignore jupyter notebooks
         types_or: [ python, pyi ]
         args: [ --fix ]
   - repo: https://github.com/psf/black
-    rev: {{ cookiecutter.black }}
+    rev: latest
     hooks:
       - id: black
         language_version: python3.12
         exclude: migrations
   - repo: https://github.com/pycqa/isort
-    rev: v{{ cookiecutter.isort }}
+    rev: latest
     hooks:
       - id: isort
         name: isort (python)
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v{{ cookiecutter.pre-commit-hooks }}
+    rev: latest
     hooks:
       - id: check-docstring-first
       - id: check-merge-conflict

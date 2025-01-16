@@ -51,7 +51,8 @@ jobs:
           python3 -m venv env
           . env/bin/activate
           make setup
-      {% if cookiecutter.include_accessibility_tests == 'yes' %}
+  {% endraw %}
+      {% if cookiecutter.include_accessibility_tests == 'yes' -%}
       #----------------------------------------------
       # install geckodriver
       #----------------------------------------------
@@ -62,6 +63,7 @@ jobs:
             sudo mv geckodriver /usr/local/bin
             sudo chown root:root /usr/local/bin/geckodriver
       {% endif %}
+  {% raw %}
       #----------------------------------------------
       # install your root project, if required
       #----------------------------------------------
