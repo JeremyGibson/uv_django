@@ -1,0 +1,116 @@
+# Default recipe (runs when you just type 'just')
+default:
+    @just --list
+
+# Remove Python cache files
+clean:
+    @find . -name "*.pyc" -exec rm -rf {} \;
+    @find . -name "__pycache__" -delete
+
+# Update Python dependencies
+update-requirements:
+    uv sync
+
+# Install Python dependencies
+install-requirements:
+    uv sync
+
+# Setup the development environment
+setup:
+    @echo 'Setting up the environment...'
+    uv sync
+    bun install
+
+# Run the production server
+run-prod:
+    @echo "Running the production server"
+    docker compose -f docker-compose-deploy.yml up -d
+
+# Start local database only
+run-dev-db:
+    @echo "Starting local db"
+    docker compose up -d --remove-orphans
+
+# Run local development server (db + frontend + django)
+run-dev:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    trap 'jobs -p | xargs -r kill 2>/dev/null' EXIT
+    echo 'Running local development'
+    docker compose up -d --remove-orphans
+    bun run css-watch &
+    bun run build.config.js &
+    python manage.py runserver
+
+# Run tests
+run-tests:
+    @echo 'Checking for migrations'
+    python manage.py makemigrations --dry-run --check
+    pytest
+
+# Run Django migrations
+migrate:
+    python manage.py migrate
+
+# Create a superuser
+createsuperuser:
+    python manage.py createsuperuser
+
+# Run Django management command
+manage *ARGS:
+    python manage.py {% raw %}{{ ARGS }}{% endraw %}
+
+# Stop all Docker containers and clean up any orphaned processes
+stop:
+    @echo "Stopping Docker containers..."
+    -docker compose down 2>/dev/null || true
+    @echo "Cleaning up any orphaned background processes..."
+    -pkill -f "tailwindcss.*--watch" 2>/dev/null || true
+    -pkill -f "build\.config\.js" 2>/dev/null || true
+    @echo "All processes stopped"
+
+# View Docker logs
+logs:
+    docker compose logs -f
+
+# View project containers
+ps:
+    docker compose ps -a
+
+# View all Docker containers (formatted)
+docker-ps:
+    @docker ps -a
+
+# Clean up stopped containers
+docker-clean:
+    docker container prune -f
+
+# Run pre-commit hooks on all files
+lint:
+    pre-commit run --all-files
+
+# Open Django shell
+shell:
+    python manage.py shell_plus
+
+# Build frontend assets (JS and CSS)
+build-frontend:
+    bun run build:css
+    bun run build.config.js
+
+# Build CSS only
+build-css:
+    bun run build:css
+
+# Watch CSS for changes
+watch-css:
+    bun run css-watch
+
+# Build Docker image with datetime and latest tags
+build-image:
+    #!/usr/bin/env bash
+    DATETIME=$(date +%Y%m%d-%H%M%S)
+    docker build -t {% raw %}{{ cookiecutter.project_app }}{% endraw %}:$DATETIME -t {% raw %}{{ cookiecutter.project_app }}{% endraw %}:latest .
+    echo "✓ Built Docker images:"
+    echo "  {% raw %}{{ cookiecutter.project_app }}{% endraw %}:$DATETIME"
+    echo "  {% raw %}{{ cookiecutter.project_app }}{% endraw %}:latest"

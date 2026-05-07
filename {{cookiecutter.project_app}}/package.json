@@ -6,13 +6,22 @@
   "main": "index.js",
   "prettier": "eslint-config-vinta/prettier",
   "scripts": {
-    "css-watch": "bunx tailwindcss -i ./{{ cookiecutter.project_app }}/assets/styles/app.css -o ./{{ cookiecutter.project_app }}/static/css/main.css --watch",
+    "css-watch": "bunx @tailwindcss/cli -i ./{{ cookiecutter.project_app }}/assets/styles/app.css -o ./{{ cookiecutter.project_app }}/static/css/main.css --watch=always",
     "build": "DEPLOY=DEPLOY bun run ./build.config.js",
-    "build:css": "bunx tailwindcss -i ./{{ cookiecutter.project_app }}/assets/styles/app.css -o ./{{ cookiecutter.project_app }}/static/css/main.css --minify"
+    "build:css": "bunx @tailwindcss/cli -i ./{{ cookiecutter.project_app }}/assets/styles/app.css -o ./{{ cookiecutter.project_app }}/static/css/main.css --minify",
+    "stop": "pkill -f 'bun run css-watch' || true && pkill -f 'bun run build.config.js' || true"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "dependencies": {
+    "alpinejs": "^3.15.8",
+    "tailwindcss": "^4.1.18",
+    "@tailwindcss/cli": "^4.1.18"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3"
   }
 }

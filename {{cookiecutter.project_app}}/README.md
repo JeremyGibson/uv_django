@@ -7,6 +7,7 @@ To begin you should have the following applications installed on your local deve
 - Python >= {{ cookiecutter.python_version }}
 - bun
 - uv
+- just (command runner - [installation instructions](https://github.com/casey/just#installation))
 - Postgres >= {{ cookiecutter.postgres_version }}
 - git >= 2.26
 
@@ -47,7 +48,7 @@ Now install the project Node packages with ``npm``:
 Install Python dependencies with:
 
 ```linux
-    ({{ cookiecutter.project_app }})$ make setup
+    ({{ cookiecutter.project_app }})$ just setup
 ```
 
 {% if cookiecutter.include_accessibility_tests == 'yes' %}
@@ -73,19 +74,13 @@ Note that accessibility tests run before migration checks, so any test errors in
 {% endif %}
 {% endif %}
 
-NOTE: This project uses ``pip-tools``. If the dependency `.txt` files need to be
-updated:
+NOTE: This project uses ``uv`` for Python dependency management. To update dependencies:
 
 ```sh
-    ({{ cookiecutter.project_app }})$ make update_requirements setup
+    ({{ cookiecutter.project_app }})$ just update-requirements
 ```
 
-NOTE 2: During a development cycle if a developer needs to add subtract or modify the requirements of the project, the
-workflow is to:
-
-1) Make the change in the ``*.in`` requirement file
-2) run ``make update_requirements``
-3) commit both ``*.in`` file(s) and the ``*.txt`` file(s) generated
+To add or modify dependencies, edit the ``pyproject.toml`` file and run ``just update-requirements``.
 
 
 **4. Pre-commit**
@@ -150,18 +145,17 @@ following shell environment variables:
 
 ```linux
     ({{ cookiecutter.project_app }})$ docker-compose up -d
-    ({{ cookiecutter.project_app }})$ python manage.py migrate
-    ({{ cookiecutter.project_app }})$ python manage.py createsuperuser
+    ({{ cookiecutter.project_app }})$ just migrate
+    ({{ cookiecutter.project_app }})$ just createsuperuser
 ```
 
 **8. Run the server**
 
 ```linux
-    ({{ cookiecutter.project_app }})$ docker-compose up -d
-    ({{ cookiecutter.project_app }})$ make run-dev
+    ({{ cookiecutter.project_app }})$ just run-dev
 ```
 
-After initial setup the development server should be run using ``make run-dev`` this will remove any deployment containers hanging around and setup using local sources and database.
+After initial setup the development server should be run using ``just run-dev`` this will remove any deployment containers hanging around and setup using local sources and database.
 
 
 **9. Access the server**
@@ -175,5 +169,5 @@ The Django admin is at `/admin` and the Wagtail admin is at `/cms`.
 
 
 ```sh
-    ({{ cookiecutter.project_app }})$ make run-tests
+    ({{ cookiecutter.project_app }})$ just run-tests
 ```

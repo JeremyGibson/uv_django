@@ -2,10 +2,17 @@ include:
   - docker-compose.yml
 
 services:
+  memcached:
+    image: memcached:1.6-alpine
+    ports:
+      - "11211:11211"
+    command: memcached -m 64
+
   app:
     environment:
       DJANGO_SETTINGS_MODULE: {{ cookiecutter.project_app }}.settings.deploy
       DATABASE_URL: postgres://postgres@db:5432/{{ cookiecutter.project_app }}
+      CACHE_URL: memcache://memcached:11211
       ENVIRONMENT: local
       DJANGO_SECRET_KEY: insecure-dev-key
       DOMAIN: localhost
@@ -17,5 +24,6 @@ services:
     command: ["uwsgi", "--show-config"]
     depends_on:
       - db
+      - memcached
     ports:
       - "8000:8000"

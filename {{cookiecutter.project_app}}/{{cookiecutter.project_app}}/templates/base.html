@@ -1,46 +1,46 @@
 {% raw -%}
 {% load static %}
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>
-        {% block title %}
-            {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-        {% endblock %}
-        {% block title_suffix %}
-            {% with self.get_site.site_name as site_name %}
-                {% if site_name %}- {{ site_name }}{% endif %}
-            {% endwith %}
-        {% endblock %}
-    </title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    {# Global javascript #}
-    <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
-
-    {# favicon #}
-    <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/x-icon">
-
-    {# Base stylesheets #}
-    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
-
-
-    {% block extra_css %}
-    {% endblock %}
-</head>
-
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}
+                    {{ self.seo_title }}
+                {% else %}
+                    {{ self.title }}
+                {% endif %}
+            {% endblock title %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock title_suffix %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
+        {# favicon #}
+        <link rel="shortcut icon"
+              href="{% static 'favicon.png' %}"
+              type="image/x-icon">
+        {# Base stylesheets #}
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+        {% block extra_css %}
+        {% endblock extra_css %}
+    </head>
+    <body>
 {% endraw %}
-    <div class="test_div">Hello {{cookiecutter.project_name}}! My color is Red. That means the styles are building correctly.</div>
+        <div class="test_div">Hello {{cookiecutter.project_name}}! My color is Red. That means the styles are building correctly.</div>
 {% raw %}
-
-    {% block content %}{% endblock %}
-
-    {% block extra_js %}{% endblock %}
-</body>
+        {% block content %}
+        {% endblock content %}
+        {% block extra_js %}
+        {% endblock extra_js %}
+    </body>
 {% endraw %}
 {% if cookiecutter.project_type == "wagtail" -%}
 {% raw %}

@@ -3,7 +3,7 @@ name = "{{ cookiecutter.project_app }}"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "django",
     "psycopg[binary]",
@@ -22,7 +22,6 @@ dev =  [
     "ipython",
     "invoke",
     "pre-commit",
-    "black",
     "coverage",
     "model-bakery",
     {%- if cookiecutter.include_accessibility_tests == 'yes' %}
@@ -46,9 +45,9 @@ prod = [
     "uwsgi",
 ]
 
-[tool.black]
+[tool.ruff]
 line-length = 100
-target-version = ["py311"]
+target-version = "py313"
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
