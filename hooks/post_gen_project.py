@@ -19,30 +19,25 @@ def clean_project():
     print("Renaming .envrc")
     Path(Path().cwd(), ".envrc_template").rename(Path(Path().cwd(), ".envrc"))
 
+    print("Creating local.py from local.example.py")
+    shutil.copy(
+        Path("{{cookiecutter.project_app}}/settings/local.example.py"),
+        Path("{{cookiecutter.project_app}}/settings/local.py")
+    )
+
 
 def setup_node():
     print("Setting up Bun")
-    base_deps = [
-        "alpinejs",
-        "tailwindcss",
-    ]
-
-    dev_deps = [
-        "esbuild"
-    ]
-
+    # Install Bun if not already installed
     subprocess.run(['/bin/bash', '-i', '-c', f'curl -fsSL https://bun.sh/install | bash'])
 
-    for dep in base_deps:
-        subprocess.run(['bun', 'add', dep])
-
-    for dep in dev_deps:
-        subprocess.run(['bun', 'add', '--development', dep])
+    # Install all dependencies from package.json
+    subprocess.run(['bun', 'install'])
 
 
 def setup_python():
     print("Setting up Python")
-    subprocess.run(['make', 'update_requirements'])
+    subprocess.run(['just', 'update-requirements'])
 
 
 def main():

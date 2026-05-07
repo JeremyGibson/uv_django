@@ -3,7 +3,7 @@
   "project_app": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
   "primary_app": "{{ cookiecutter.project_app }}",
   "primary_app_config": "{{ cookiecutter.project_app|replace('_','')|capitalize()|trim() }}",
-  "python_version": "3.12.6",
+  "python_version": "3.13.7",
   "uv_version": "",
   "project_type": ["wagtail", "django"],
   "testing_type": ["pytest", "django"],

@@ -39,9 +39,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./env
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements/dev/dev.txt', '**/requirements/base/base.txt') }}
+          key: ${{ runner.os }}-uv-${{ hashFiles('**/uv.lock') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-uv-
       #----------------------------------------------
       # install dependencies if cache does not exist
       #----------------------------------------------
@@ -50,7 +50,7 @@ jobs:
         run: |
           python3 -m venv env
           . env/bin/activate
-          make setup
+          just setup
   {% endraw %}
       {% if cookiecutter.include_accessibility_tests == 'yes' -%}
       #----------------------------------------------
@@ -70,7 +70,7 @@ jobs:
       - name: Run tests
         run: |
           . env/bin/activate
-          make run-tests
+          just run-tests
   {% endraw %}
         env:
           DJANGO_SETTINGS_MODULE: {{cookiecutter.project_app}}.settings.dev
